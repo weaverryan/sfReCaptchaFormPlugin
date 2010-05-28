@@ -131,11 +131,11 @@ class sfReCaptchaForm
     $validatorSchema = $form->getValidatorSchema();
 
     $widgetSchema['captcha'] = new sfWidgetFormReCaptcha(array(
-      'public_key' => $publicKey
+      'public_key' => $this->_publicKey
     ));
 
     $validatorSchema['captcha'] = new sfValidatorReCaptcha(array(
-      'private_key' => $privateKey
+      'private_key' => $this->_privateKey
     ));
   }
 
