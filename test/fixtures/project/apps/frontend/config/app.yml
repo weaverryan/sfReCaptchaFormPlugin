@@ -1,0 +1,15 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/11-App
+
+# default values
+all:
+  recaptcha:
+    extended_form_class:    sfTestReCaptchaForm
+    
+    public_key:   apple
+    private_key:  banana
+    
+    # A collection of form classes that will automatically be setup with recaptcha
+    forms:
+      autoReCaptchaForm:    true
+      fakeReCaptchaForm:    false

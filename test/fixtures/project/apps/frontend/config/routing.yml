@@ -1,0 +1,11 @@
+auto:
+  url:   /auto
+  param: { module: test, action: auto }
+
+manual:
+  url:   /manual
+  param: { module: test, action: manual }
+
+submit:
+  url:   /submit
+  param: { module: test, action: submit }
