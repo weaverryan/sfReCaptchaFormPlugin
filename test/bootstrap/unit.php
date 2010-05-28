@@ -11,20 +11,20 @@ sfCoreAutoload::register();
 $configuration = new sfProjectConfiguration(dirname(__FILE__).'/../fixtures/project');
 require_once $configuration->getSymfonyLibDir().'/vendor/lime/lime.php';
 
-function sfReCaptchaPlugin_autoload_again($class)
+function sfReCaptchaFormPlugin_autoload_again($class)
 {
   $autoload = sfSimpleAutoload::getInstance();
   $autoload->reload();
   return $autoload->autoload($class);
 }
-spl_autoload_register('sfReCaptchaPlugin_autoload_again');
+spl_autoload_register('sfReCaptchaFormPlugin_autoload_again');
 
-if (file_exists($config = dirname(__FILE__).'/../../config/sfReCaptchaPluginConfiguration.class.php'))
+if (file_exists($config = dirname(__FILE__).'/../../config/sfReCaptchaFormPluginConfiguration.class.php'))
 {
   require_once $config;
-  $plugin_configuration = new sfReCaptchaPluginConfiguration($configuration, dirname(__FILE__).'/../..', 'sfReCaptchaPlugin');
+  $plugin_configuration = new sfReCaptchaFormPluginConfiguration($configuration, dirname(__FILE__).'/../..', 'sfReCaptchaFormPlugin');
 }
 else
 {
-  $plugin_configuration = new sfPluginConfigurationGeneric($configuration, dirname(__FILE__).'/../..', 'sfReCaptchaPlugin');
+  $plugin_configuration = new sfPluginConfigurationGeneric($configuration, dirname(__FILE__).'/../..', 'sfReCaptchaFormPlugin');
 }

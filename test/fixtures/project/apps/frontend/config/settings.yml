@@ -25,7 +25,7 @@ test:
 all:
   .settings:
     # Form security secret (CSRF protection)
-    csrf_secret:            sfReCaptchaPlugin
+    csrf_secret:            sfReCaptchaFormPlugin
 
     # Output escaping settings
     escaping_strategy:      on

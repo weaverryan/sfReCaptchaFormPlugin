@@ -1,13 +1,13 @@
 <?php
 
 /**
- * Configuration class for sfReCaptchaPlugin
+ * Configuration class for sfReCaptchaFormPlugin
  * 
- * @package     sfReCaptchaPlugin
+ * @package     sfReCaptchaFormPlugin
  * @subpackage  config
  * @author      Ryan Weaver <ryan@thatsquality.com>
  */
-class sfReCaptchaPluginConfiguration extends sfPluginConfiguration
+class sfReCaptchaFormPluginConfiguration extends sfPluginConfiguration
 {
   public static $dependencies = array(
     'sfFormExtraPlugin',
@@ -84,7 +84,7 @@ class sfReCaptchaPluginConfiguration extends sfPluginConfiguration
       catch (InvalidArgumentException $e)
       {
         throw new sfException(sprintf(
-          'sfReCaptchaPlugin requires the %s plugin, which is either not installed or not enabled.',
+          'sfReCaptchaFormPlugin requires the %s plugin, which is either not installed or not enabled.',
           $dependency
         ));
       }

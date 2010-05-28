@@ -12,7 +12,7 @@ class ProjectConfiguration extends sfProjectConfiguration
 {
   public function setup()
   {
-    $this->setPlugins(array('sfReCaptchaPlugin', 'sfFormExtraPlugin'));
-    $this->setPluginPath('sfReCaptchaPlugin', dirname(__FILE__).'/../../../..');
+    $this->setPlugins(array('sfReCaptchaFormPlugin', 'sfFormExtraPlugin'));
+    $this->setPluginPath('sfReCaptchaFormPlugin', dirname(__FILE__).'/../../../..');
   }
 }
