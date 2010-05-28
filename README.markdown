@@ -13,7 +13,7 @@ the `configure()` method of your form:
     {
       public function configure()
       {
-        $this->embedRecaptch();
+        $this->embedRecaptcha();
       }
     }
 
