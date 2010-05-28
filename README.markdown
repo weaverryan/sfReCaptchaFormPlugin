@@ -60,6 +60,18 @@ to call `embedRecaptcha()` from within your form:
         forms:
           myProductForm:    true
 
+Common Problems
+---------------
+
+If you receive the error "Call to undefined method testForm::embedRecaptcha.",
+then most likely:
+
+ * The plugin is not installed or enabled
+
+ * Your form extends only `sfForm`. It should extends `sfFormSymfony`. If
+   your form is a Doctrine or Propel form, or your form extends `BaseForm`,
+   then this is not the problem.
+
 The Fine Details
 ----------------
 
