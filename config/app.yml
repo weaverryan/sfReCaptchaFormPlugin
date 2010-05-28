@@ -1,10 +1,13 @@
 all:
   recaptcha:
-    extended_form_class:    sfReCaptchaForm
-    
-    recaptcha_public_key:   6Ld2DgQAAAAAAApXLteupHPcbSxbSHkhNTuYLChX
-    recaptcha_private_key:  6Ld2DgQAAAAAANIbaXJsFEBOyg56CL_ljy3APlPb
+
+    # These will need to be filled in by the developer using this plugin
+    recaptcha_public_key:   ~
+    recaptcha_private_key:  ~
     
     # A collection of form classes that will automatically be setup with recaptcha
     forms:                  []
       #myFormClass:    true
+
+    # The main form class that performs most of the work
+    extended_form_class:    sfReCaptchaForm
