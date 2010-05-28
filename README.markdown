@@ -26,9 +26,13 @@ The validation of the captcha will take place automatically.
 Installation
 ------------
 
+This plugin requires the `sfFormExtraPlugin` plugin. Below are instructions
+for installing both `sfReCaptchaFormPlugin` and `sfFormExtraPlugin`.
+
 To install this plugin from git:
 
     git submodule add git://github.com/weaverryan/sfReCaptchaFormPlugin.git plugins/sfReCaptchaFormPlugin
+    git submodule add git://github.com/diem-project/sfFormExtraPlugin.git plugins/sfFormExtraPlugin
     git submodule init
 
 In your `config/ProjectConfiguration.class.php` file, add the following:
@@ -37,7 +41,7 @@ In your `config/ProjectConfiguration.class.php` file, add the following:
     {
       // ...
 
-      $this->enablePlugins('sfReCaptchaFormPlugin');
+      $this->enablePlugins(array('sfReCaptchaFormPlugin', 'sfFormExtraPlugin'));
     }
 
 Configuration
@@ -72,7 +76,7 @@ to call `embedRecaptcha()` from within your form:
 Common Problems
 ---------------
 
-If you receive the error "Call to undefined method testForm::embedRecaptcha.",
+If you receive the error "_Call to undefined method testForm::embedRecaptcha._",
 then most likely:
 
  * The plugin is not installed or enabled
@@ -80,6 +84,10 @@ then most likely:
  * Your form extends only `sfForm`. It should extends `sfFormSymfony`. If
    your form is a Doctrine or Propel form, or your form extends `BaseForm`,
    then this is not the problem.
+
+If you receive the error "_You must specify the recaptcha public and
+private key in your sympal configuratio_", then you need to specify your
+reCAPTCHA configuration in `app.yml`. See the `Configuration` section above.
 
 The Fine Details
 ----------------
