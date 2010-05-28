@@ -31,6 +31,15 @@ To install this plugin from git:
     git submodule add git://github.com/weaverryan/sfReCaptchaFormPlugin.git plugins/sfReCaptchaFormPlugin
     git submodule init
 
+In your `config/ProjectConfiguration.class.php` file, add the following:
+
+    public function setup()
+    {
+      // ...
+
+      $this->enablePlugins('sfReCaptchaFormPlugin');
+    }
+
 Configuration
 -------------
 
