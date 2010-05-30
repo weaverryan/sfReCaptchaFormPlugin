@@ -1,7 +1,12 @@
 sfReCaptchaFormPlugin
 =====================
 
-Very simple, test, plugin to add reCAPTCHA to a symfony form.
+Easily include reCAPTCHA in your symfony forms.
+
+This plugin has a test suite and is built on top of the well-known and
+trusted sfFormExtraPlugin.
+
+This plugin works with symfony 1.3 and 1.4.
 
 Usage
 -----
@@ -26,10 +31,20 @@ The validation of the captcha will take place automatically.
 Installation
 ------------
 
-To install this plugin from git:
+### Git
 
     git submodule add git://github.com/weaverryan/sfReCaptchaFormPlugin.git plugins/sfReCaptchaFormPlugin
     git submodule init
+
+### SVN
+
+    svn propedit svn:externals plugins
+
+In the resulting screen, add the following line:
+
+    sfReCaptchaFormPlugin https://svn.github.com/weaverryan/sfReCaptchaFormPlugin.git
+
+### Project Setup:
 
 In your `config/ProjectConfiguration.class.php` file, add the following:
 
@@ -43,7 +58,7 @@ In your `config/ProjectConfiguration.class.php` file, add the following:
 Configuration
 -------------
 
-The only configuration needed are the reCAPTCHA public and private keys.
+The only configuration values needed are the reCAPTCHA public and private keys.
 First, obtain a public and private key via
 [https://www.google.com/recaptcha/admin/create](https://www.google.com/recaptcha/admin/create).
 
@@ -60,7 +75,7 @@ Advanced Configuration
 The `app.yml` file that comes packaged with the plugin shows all of the
 configuration options:
 
-Most notably, you can automatically enable ReCaptcha on any form by
+Most notably, you can automatically enable recaptcha on any form by
 specifying the form class in `app.yml`. If you do this, you won't need
 to call `embedRecaptcha()` from within your form:
 
@@ -73,11 +88,11 @@ Common Problems
 ---------------
 
 If you receive the error "Call to undefined method testForm::embedRecaptcha.",
-then most likely:
+then either:
 
- * The plugin is not installed or enabled
+ * The plugin is not installed or enabled.
 
- * Your form extends only `sfForm`. It should extends `sfFormSymfony`. If
+ * Your form extends only `sfForm`. It must extend `sfFormSymfony`. If
    your form is a Doctrine or Propel form, or your form extends `BaseForm`,
    then this is not the problem.
 
