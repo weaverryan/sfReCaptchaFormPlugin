@@ -1,10 +1,8 @@
 sfReCaptchaFormPlugin
 =====================
 
-Easily include reCAPTCHA in your symfony forms.
-
-This plugin has a test suite and is built on top of the well-known and
-trusted sfFormExtraPlugin.
+Easily add reCAPTCHA to a symfony form. This plugin is tested and built
+on top of sfFormExtraPlugin.
 
 This plugin works with symfony 1.3 and 1.4.
 
