@@ -18,7 +18,7 @@ the `configure()` method of your form:
     {
       public function configure()
       {
-        $this->embedRecaptch();
+        $this->embedRecaptcha();
       }
     }
 
@@ -31,9 +31,13 @@ The validation of the captcha will take place automatically.
 Installation
 ------------
 
+This plugin requires the `sfFormExtraPlugin` plugin. Below are instructions
+for installing both `sfReCaptchaFormPlugin` and `sfFormExtraPlugin`.
+
 ### Git
 
     git submodule add git://github.com/weaverryan/sfReCaptchaFormPlugin.git plugins/sfReCaptchaFormPlugin
+    git submodule add git://github.com/diem-project/sfFormExtraPlugin.git plugins/sfFormExtraPlugin
     git submodule init
 
 ### SVN
@@ -43,6 +47,7 @@ Installation
 In the resulting screen, add the following line:
 
     sfReCaptchaFormPlugin https://svn.github.com/weaverryan/sfReCaptchaFormPlugin.git
+    sfFormExtraPlugin http://svn.symfony-project.com/plugins/sfFormExtraPlugin/branches/1.3/
 
 ### Project Setup:
 
@@ -52,7 +57,7 @@ In your `config/ProjectConfiguration.class.php` file, add the following:
     {
       // ...
 
-      $this->enablePlugins('sfReCaptchaFormPlugin');
+      $this->enablePlugins(array('sfReCaptchaFormPlugin', 'sfFormExtraPlugin'));
     }
 
 Configuration
@@ -87,7 +92,7 @@ to call `embedRecaptcha()` from within your form:
 Common Problems
 ---------------
 
-If you receive the error "Call to undefined method testForm::embedRecaptcha.",
+If you receive the error "_Call to undefined method testForm::embedRecaptcha._",
 then either:
 
  * The plugin is not installed or enabled.
@@ -95,6 +100,10 @@ then either:
  * Your form extends only `sfForm`. It must extend `sfFormSymfony`. If
    your form is a Doctrine or Propel form, or your form extends `BaseForm`,
    then this is not the problem.
+
+If you receive the error "_You must specify the recaptcha public and
+private key in your sympal configuratio_", then you need to specify your
+reCAPTCHA configuration in `app.yml`. See the `Configuration` section above.
 
 The Fine Details
 ----------------
